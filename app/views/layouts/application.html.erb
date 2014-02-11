@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/meta' %>
+
+  <%= csrf_meta_tags %>
+
+  <%= render 'layouts/stylesheet_javascript' %>
+
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <%= render 'layouts/header_menu' %>
+    <%= render 'layouts/logo' %>
+  </div>
+
+  <div class="row marketing">
+      <% flash.each do |name, msg| %>
+          <p><%= content_tag :div, msg, id: "flash_#{name}" %></p>
+      <% end %>
+      <%= yield %>
+  </div>
+  <%= debug(params) if Rails.env.development? %>
+
+  <%= render 'layouts/footer' %>
+
+</div>
+<!-- /container -->
+</body>
+</html>

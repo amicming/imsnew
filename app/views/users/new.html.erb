@@ -1,0 +1,10 @@
+<%= form_for(@user, :html => { class: "form-signin", role: "form" }) do |f| %>
+    <h2 class="form-signin-heading">Sign up</h2>
+    <%= render 'shared/error_messages' %><br/>
+
+    <%= f.text_field :name, class: "form-control", placeholder: "Karyakar Name" %>
+    <%= f.text_field :email, class: "form-control", placeholder: "Karyakar E-Mail Address" %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Password"  %>
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirmation Password"  %>
+    <%= f.submit "Create Karyakar", class: "btn btn-primary btn-block" %>
+<% end %>
