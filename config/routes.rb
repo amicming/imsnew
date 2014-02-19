@@ -1,8 +1,17 @@
 Imsnew::Application.routes.draw do
+  resources :free_ebooks
 
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
-  root 'pages#home'
+  resources :abbreviations
+
+ resources :users
+ resources :sessions, only: [:new, :create, :destroy]
+ match 'signup',  to: 'users#new',            via: 'get'
+ match 'signin',  to: 'sessions#new',         via: 'get'
+ match 'signout', to: 'sessions#destroy',     via: 'delete'
+ get 'tags/:tag', to: 'posts#index', as: :tag
+ get 'welcome/:article_type', to: 'welcome#page_data', as: :article_type
+ resources :posts
+ root to: "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
