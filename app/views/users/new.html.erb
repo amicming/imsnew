@@ -3,7 +3,7 @@
     <h4>Sign up</h4>
     <%= form_for(@user) do |f| %>
       <%= render 'fields', f: f %><br/>
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
     <p>Already have account? <%= link_to "Sign In now!", signin_path %></p>
   </div>
