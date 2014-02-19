@@ -16,44 +16,6 @@ ActiveRecord::Schema.define(version: 20140130022211) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "abbreviation_categories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "abbreviations", force: true do |t|
-    t.string   "stand_for"
-    t.integer  "abbreviation_category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "stand"
-  end
-
-  create_table "blog_types", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "free_ebooks", force: true do |t|
-    t.string   "book_name"
-    t.string   "book_url"
-    t.integer  "book_category_type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts", force: true do |t|
-    t.integer  "blog_type_id_id"
-    t.string   "title"
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "posts", ["blog_type_id_id"], name: "index_posts_on_blog_type_id_id", using: :btree
-
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
