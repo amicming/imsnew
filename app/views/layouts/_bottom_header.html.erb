@@ -1,0 +1,21 @@
+<div class="span12">
+  <div class="navbar">
+    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="nav-collapse collapse">
+      <div id="header">
+        <ul class="nav nav-pills">
+		<li><%= link_to raw("Programming <span>languages</span>").html_safe, {controller: "welcome", action: "page_data", article_type: 'Programming' } %></li>
+        <li><%= link_to raw("Operating <span>System</span>").html_safe, {controller: "welcome", action: "page_data", article_type: 'operating_system' } %></li>
+		<li><%= link_to raw("Database <span>System</span>").html_safe, {controller: "welcome", action: "page_data", article_type: 'Database' } %></li>
+		<li><%= link_to raw("Unit <span>Testing</span>").html_safe, {controller: "welcome", action: "page_data", article_type: 'Testing' } %></li>
+		<li><%= link_to raw("Contact <span>Desk2Mob</span>").html_safe, '#' %></li>
+        </ul>
+      </div>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>

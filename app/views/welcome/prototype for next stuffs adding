@@ -1,0 +1,222 @@
+<% if params[:recent_update_all] %>
+
+    <%= render partial: 'welcome/recent_update_all' %>
+
+<% elsif params[:abbreviation] %>
+    <%= render partial: 'welcome/abbreviation' %>
+<% elsif params[:freeebook] %>
+    <%= render partial: 'welcome/freeebook' %>
+<% else %>
+	<div class="row-fluid">
+	  <div class="span12">
+	    <div class="row-fluid">
+	      <div class="span8">
+		<div class="row-fluid">
+		  <div class="span12">
+		    <div class="span3">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+		        <%= render partial: 'layouts/box/box_title', :locals => {title: 'Mock Exams'} %>
+		        <%= render partial: 'layouts/box/content_box', :locals => {content: ["Ruby", "Java"]} %>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		    <div class="span6">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+			<div class="Box">
+				<div class="Title"><%= link_to "Recent Updates", {controller: "welcome", action: "index", recent_update_all: 'recent_update_all' } %></div>
+			</div>
+			<div class="contentBox">
+				<table class="table table-condensed table-hover">
+					<% @recent_updates.each do |post| %>
+					<tr>
+						<td><%= link_to post.title, post, target: "_blank", title: "Click Here to Read Complete Post" %></td>
+					</tr>
+					<% end %>
+					<tr>
+						<td><%= link_to raw("View All &raquo;&raquo;").html_safe, {controller: "welcome", action: "index", recent_update_all: 'recent_update_all' }, class: "btn btn-mini" %></td>
+					</tr>
+				</table>
+			</div>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		    <div class="span3">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+                <div class="Box">
+                  <div class="Title"><%= link_to "Free eBooks", {controller: "welcome", action: "index", freeebook: 'freeebook' } %></div>
+                </div>
+                <div class="contentBox">
+                  <table class="table table-condensed table-hover">
+                    <% @abbreviation.each do |abbr| %>
+                        <tr>
+                          <td><%= link_to abbr.name, {controller: "free_ebooks", action: "index", free_ebook_type: abbr.id }, target: "_blank", title: "Click Here to Find Free eBook Link Of "+abbr.name %></td>
+                        </tr>
+                    <% end %>
+                    <tr>
+                      <td><%= link_to raw("View All &raquo;&raquo;").html_safe, {controller: "welcome", action: "index", freeebook: 'freeebook' }, class: "btn btn-mini" %></td>
+                    </tr>
+                  </table>
+                </div>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		  </div>
+		</div>
+		<br/>
+
+		<div class="row-fluid">
+		  <div class="span12">
+		    <div class="span3">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+		        <%= render partial: 'layouts/box/box_title', :locals => {title: 'FAQs [remove this - no difference with Interview question]'} %>
+		        <%= render partial: 'layouts/box/content_box', :locals => {content: ["Ruby", "Java"]} %>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		    <div class="span6">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+		        <%= render partial: 'layouts/box/box_title', :locals => {title: 'Discount Codes'} %>
+		        <%= render partial: 'layouts/box/content_box', :locals => {content: ["rental cars"]} %>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		    <div class="span3">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+		        <%= render partial: 'layouts/box/box_title', :locals => {title: 'Interview Questions'} %>
+		        <%= render partial: 'layouts/box/content_box', :locals => {content: ["Ruby", "Java"]} %>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		  </div>
+		</div>
+		<br/>
+
+		<div class="row-fluid">
+		  <div class="span12">
+		    <div class="span3">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+                <div class="Box">
+                  <div class="Title"><%= link_to "Abbreviations", {controller: "welcome", action: "index", abbreviation: 'abbreviation' } %></div>
+                </div>
+                <div class="contentBox">
+                  <table class="table table-condensed table-hover">
+                    <% @abbreviation.each do |abbr| %>
+                        <tr>
+                          <td><%= link_to abbr.name, {controller: "abbreviations", action: "index", abbr_type: abbr.id }, target: "_blank", title: "Click Here to Read Complete Abbreviations Of "+abbr.name %></td>
+                        </tr>
+                    <% end %>
+                    <tr>
+                      <td><%= link_to raw("View All &raquo;&raquo;").html_safe, {controller: "welcome", action: "index", abbreviation: 'abbreviation' }, class: "btn btn-mini" %></td>
+                    </tr>
+                  </table>
+                </div>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		    <div class="span6">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+		        <%= render partial: 'layouts/box/box_title', :locals => {title: 'Thinking Stage'} %>
+		        <%= render partial: 'layouts/box/content_box', :locals => {content: ["Need to decide these block"]} %>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		    <div class="span3">
+		      <div class="EachBox">
+		        <%= render 'layouts/box/box_curve' %>
+		        <%= render partial: 'layouts/box/box_title', :locals => {title: 'Thinking Stage'} %>
+		        <%= render partial: 'layouts/box/content_box', :locals => {content: ["Need to decide these block"]} %>
+		        <%= render 'layouts/box/box_bottom_curve' %>
+		      </div>
+		    </div>
+		    <!--/span-->
+		  </div>
+		</div>
+	      </div>
+	      <div class="span4">
+		<div class="row-fluid">
+		  <div class="span12">
+		    <div class="span6">
+		      <div class="pull-right">
+		        <a href="#"><img alt="Desk2Mob" src="assets/160x600.gif" title="Desk2Mob" height="600" width="160"></a>
+		      </div>
+		    </div>
+		    <div class="span6">
+		      <div class="bs-docs-example bs-docs-example-submenus">
+		        <div class="dropdown">
+		          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+		            <li class="dropdown-submenu pull-left">
+		              <a href="#">Ruby</a>
+		              <ul class="dropdown-menu">
+		                <li><a tabindex="-1" href="#">Ruby</a></li>
+		                <li class="divider"></li>
+		                <li><a tabindex="-1" href="#">Ruby On Rails</a></li>
+		                <li class="divider"></li>
+		                <li><a tabindex="-1" href="#">#hmal</a></li>
+		                <li class="divider"></li>
+		                <li class="dropdown-submenu pull-left">
+		                  <a tabindex="-1" href="#">will_paginate</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a tabindex="-1" href="#">paginate</a></li>
+		                    <li class="divider"></li>
+		                    <li><a tabindex="-1" href="#">WillPaginate::Collection</a></li>
+		                  </ul>
+		                </li>
+		              </ul>
+		            </li>
+		          </ul>
+		          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+		            <li class="dropdown-submenu pull-left">
+		              <a href="#">PHP</a>
+		              <ul class="dropdown-menu">
+		                <li><a tabindex="-1" href="#">PHP</a></li>
+		                <li class="divider"></li>
+		                <li class="dropdown-submenu pull-left">
+		                  <a tabindex="-1" href="#">Frameworks</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a tabindex="-1" href="#">cakePHP</a></li>
+		                    <li class="divider"></li>
+		                    <li><a tabindex="-1" href="#">CodeIgniter</a></li>
+		                  </ul>
+		                </li>
+		              </ul>
+		            </li>
+		          </ul>
+		          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+		            <li class="dropdown-submenu pull-left">
+		              <a href="#">Database</a>
+		              <ul class="dropdown-menu">
+		                <li><a tabindex="-1" href="#">MySQL</a></li>
+		                <li class="divider"></li>
+		                <li><a tabindex="-1" href="#">PostgreSQL</a></li>
+		                <li class="divider"></li>
+		                <li><a tabindex="-1" href="#">Oracle</a></li>
+		              </ul>
+		            </li>
+		          </ul>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- -->
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<% end %>

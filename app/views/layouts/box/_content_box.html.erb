@@ -1,0 +1,12 @@
+<div class="contentBox">
+  <table class="table table-condensed table-hover">
+    <% content.collect do |row| %>
+        <tr>
+          <td><a href="#" target="_blank" title=<%= row %>>&#160;&#160;<%= row %></a></td>
+        </tr>
+     <% end %>
+    <tr>
+      <td><a class="btn btn-mini" href="#">View All &raquo;&raquo;</a></td>
+    </tr>
+  </table>
+</div>

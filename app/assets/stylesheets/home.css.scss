@@ -1,0 +1,306 @@
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bs-docs-example-submenus {
+  min-height: 180px;
+}
+.bs-docs-example-submenus .dropdown-menu {
+  float: right;
+}
+.bs-docs-example-submenus .dropup > .dropdown-menu,
+.bs-docs-example-submenus .dropdown > .dropdown-menu {
+  display: block;
+  position: static;
+  margin-bottom: 05px;
+  *width: 180px;
+}
+.logo {
+  color: #000000;
+  display: block;
+  font-family: 'Orbitron',arial,serif;
+  font-size: 50px;
+  letter-spacing: -3px;
+  position: absolute;
+  text-decoration: none;
+}
+.logo 
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #000000;
+  letter-spacing: 0px;
+  font-size: 10px;
+}
+.logo sup {
+  top: 0.0px;
+}
+
+.active {
+  font-weight: bold;
+}
+.border-free-table tr, td, th {
+  border: 0 !important;
+}
+
+#header ul {
+  /*remove bellow line if you want to space between main menu and google ad*/
+  float: left;
+  margin: 0 0 0 0;
+}
+#header ul li {
+  list-style: none outside none;
+}
+#header ul li a {
+  background: none repeat scroll 0 0 #D4E6FC;
+  color: #000000;
+  display: block;
+  margin: 0 0 0 1px;
+  padding: 3px 10px;
+}
+#header ul li a:hover {
+  background: none repeat scroll 0 0 #336699;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+#header ul li a.active, #header ul li a.active:hover {
+  font-weight: bold;
+}
+#header ul li a span {
+  display: block;
+}
+.EachBox {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.Curve0 {
+  background-color: #C5D7EF;
+  height: 1px;
+  line-height: 1px;
+  margin: 0 4px;
+  overflow: hidden;
+}
+.Curve1 {
+  background-color: #D4E6FC;
+  border-color: #C5D7EF;
+  border-width: 0 2px;
+  margin: 0 2px;
+  border-style: solid;
+  height: 1px;
+  line-height: 1px;
+  overflow: hidden;
+}
+.Curve2 {
+  background-color: #D4E6FC;
+  border-color: #C5D7EF;
+  border-style: solid;
+  overflow: hidden;
+  border-width: 0 1px;
+  height: 2px;
+  line-height: 2px;
+  margin: 0 1px;
+}
+.Box {
+  background-color: #D4E6FC;
+  border-left: 1px solid #C5D7EF;
+  border-right: 1px solid #C5D7EF;
+  color: #224499;
+  height: 20px;
+  line-height: 19px;
+  overflow: hidden;
+  padding-bottom: 2px;
+  padding-top: 0;
+  position: relative;
+}
+.Title {
+  color: #224499;
+  margin: auto;
+  overflow: hidden;
+  padding-left: 7px;
+  padding-right: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.Title a, .Title a:active, .Title a:visited {
+  color: #224499;
+  text-decoration: none;
+}
+.Title a:hover {
+  background:#369;
+  color:#fff;
+  font-weight:bold;
+}
+.contentBox {
+  border-left: 1px solid #C5D7EF;
+  border-right: 1px solid #C5D7EF;
+  border-top: 1px solid #C5D7EF;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+.bottomBorder .Curve1, .bottomBorder .Curve2 {
+  background-color: #FFFFFF;
+}
+.contentBox ul li a {
+  color:#000;
+  text-decoration:none;
+}
+.contentBox ul li a:hover {
+  background:#369;
+  color:#fff;
+  font-weight:bold;
+}
+.contentBox ul li a.active,
+.contentBox ul li a.active:hover {
+  color:#fff;
+  background:#000;
+  font-weight:bold;
+}
+.form-signin {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+}
+.form-signin .form-signin-heading{
+  margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid;
+    &:last-child {
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.tagMatches {
+  margin:10px 10px 10px 0;
+  display:block;
+}
+
+.tagMatches span {
+  color:white;
+  background: #064CA2;
+  padding: 2px 5px;
+  cursor: pointer;
+  margin:5px 5px;
+  margin-bottom:2px;
+}
+
+/* Special grid styles
+-------------------------------------------------- */
+
+.show-grid {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.show-grid [class*="span"] {
+  background-color: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  min-height: 0px;
+  line-height: 22px;
+}
+.show-grid [class*="span"]:hover {
+  background-color: #C5D7EF;
+}
+.show-grid .show-grid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.show-grid .show-grid [class*="span"] {
+  margin-top: 5px;
+}
+.show-grid [class*="span"] [class*="span"] {
+  background-color: #ccc;
+}
+.show-grid [class*="span"] [class*="span"] [class*="span"] {
+  background-color: #999;
+}
+
+/* Space out the show-grid examples */
+.show-grid [class*="span"] {
+  margin-bottom: 5px;
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 60px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
